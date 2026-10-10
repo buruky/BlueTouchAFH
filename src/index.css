@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (no external font CDN) */
+@import "@fontsource/spectral/500.css";
+@import "@fontsource/spectral/600.css";
+@import "@fontsource/spectral/700.css";
+@import "@fontsource/spectral/600-italic.css";
+@import "@fontsource/source-sans-3/400.css";
+@import "@fontsource/source-sans-3/500.css";
+@import "@fontsource/source-sans-3/600.css";
+@import "@fontsource/source-sans-3/700.css";
+
+@theme {
+  /* Brand navy + gold, carried over from Blue Touch's existing print identity */
+  --color-navy-950: #0c1a33;
+  --color-navy-900: #132a52;
+  --color-navy-800: #1b3764;
+  --color-navy-700: #274879;
+  --color-navy-100: #e7ecf4;
+  --color-navy-50: #f3f5f9;
+
+  --color-gold-600: #a97c22;
+  --color-gold-500: #c6983a;
+  --color-gold-400: #d7b161;
+  --color-gold-100: #f3e7cb;
+
+  --color-cream-50: #faf9f6;
+  --color-ink-900: #1b1e24;
+  --color-ink-600: #4b5160;
+
+  --font-display: "Spectral", ui-serif, Georgia, serif;
+  --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-xs: 420px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-900);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
