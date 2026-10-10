@@ -33,12 +33,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-2.5">
-          <Logo
-            className={`h-8 w-8 shrink-0 transition-colors ${
-              scrolled ? "text-navy-900" : "text-white"
-            }`}
-            style={{ "--logo-accent": scrolled ? "#c6983a" : "#d7b161" }}
-          />
+          <Logo className="h-9 w-9 shrink-0" />
           <span className="flex items-baseline gap-1.5">
             <span
               className={`font-display text-2xl font-semibold tracking-tight transition-colors ${

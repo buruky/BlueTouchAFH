@@ -10,10 +10,7 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2.5">
-              <Logo
-                className="h-8 w-8 shrink-0 text-white"
-                style={{ "--logo-accent": "#d7b161" }}
-              />
+              <Logo className="h-9 w-9 shrink-0" />
               <p className="font-display text-xl font-semibold text-white">
                 {business.name}
               </p>

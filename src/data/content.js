@@ -43,7 +43,7 @@ export const locations = [
   {
     id: "home-se",
     shortName: "27th Drive Home",
-    address: "12901 27th Dr SE",
+    address: "12907 27th Dr SE",
     cityStateZip: "Everett, WA 98208",
     neighborhood: "Silver Lake",
     phone: "(206) 834-5734",
