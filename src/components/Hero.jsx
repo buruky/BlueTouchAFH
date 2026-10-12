@@ -1,20 +1,26 @@
-import { motion, useReducedMotion } from "motion/react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 import { Phone, ArrowRight } from "@phosphor-icons/react"
 import { business } from "../data/content"
 import { locationAImages } from "../lib/images"
 
 export default function Hero() {
   const reduce = useReducedMotion()
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
+  const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 90])
 
   return (
     <section
+      ref={ref}
       id="top"
       className="relative flex min-h-[100dvh] items-center overflow-hidden"
     >
-      <img
+      <motion.img
         src={locationAImages.porch}
         alt="The welcoming front porch of a Blue Touch adult family home in Everett, Washington"
-        className="absolute inset-0 h-full w-full object-cover"
+        style={{ y }}
+        className="absolute inset-0 h-[115%] w-full object-cover"
         loading="eager"
         fetchPriority="high"
       />
@@ -39,14 +45,14 @@ export default function Hero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-base font-semibold text-navy-950 shadow-lg shadow-navy-950/20 transition hover:bg-gold-400 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-7 py-3.5 text-base font-semibold text-navy-950 shadow-lg shadow-navy-950/20 transition hover:bg-gold-400 active:scale-[0.98]"
             >
               Schedule a Tour
               <ArrowRight size={18} weight="bold" />
             </a>
             <a
               href={business.phoneHref}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 active:scale-[0.98]"
             >
               <Phone size={18} weight="fill" />
               Call {business.phone}

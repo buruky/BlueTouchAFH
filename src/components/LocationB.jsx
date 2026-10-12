@@ -45,12 +45,14 @@ export default function LocationB() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.08em] text-gold-400">
-              {location.neighborhood}, Everett
-            </p>
-            <h3 className="mt-2 font-display text-2xl font-semibold text-white sm:text-3xl">
-              {location.shortName}
-            </h3>
+            <div className="flex items-center gap-3">
+              <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">
+                {location.shortName}
+              </h3>
+              <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.04em] text-gold-400 backdrop-blur-sm">
+                {location.neighborhood}
+              </span>
+            </div>
           </div>
         </motion.button>
 
@@ -90,7 +92,7 @@ export default function LocationB() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href={location.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-[15px] font-semibold text-white transition hover:bg-navy-800 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-navy-900 px-6 py-3 text-[15px] font-semibold text-white transition hover:bg-navy-800 active:scale-[0.98]"
               >
                 <Phone size={17} weight="fill" />
                 Call {location.phone}
@@ -98,7 +100,7 @@ export default function LocationB() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(0)}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-900/20 px-6 py-3 text-[15px] font-semibold text-navy-900 transition hover:bg-white active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-navy-900/20 px-6 py-3 text-[15px] font-semibold text-navy-900 transition hover:bg-white active:scale-[0.98]"
               >
                 <Images size={17} weight="bold" />
                 View all photos

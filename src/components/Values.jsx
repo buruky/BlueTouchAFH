@@ -1,56 +1,60 @@
-import { motion, useReducedMotion } from "motion/react"
 import { Heart, HandHeart, House } from "@phosphor-icons/react"
 import { values } from "../data/content"
 
 const icons = { Heart, HandHeart, House }
 
 export default function Values() {
-  const reduce = useReducedMotion()
-
   return (
-    <section className="bg-navy-900 py-20 lg:py-28">
-      <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-        <motion.p
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-2xl font-medium italic leading-[1.3] text-white sm:text-3xl"
-        >
+    <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-28">
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern id="stoneCourse" width="140" height="46" patternUnits="userSpaceOnUse">
+            <path
+              d="M0 23 H46 M0 0 V46 M46 0 V18 M46 30 V46 M46 18 H96 M46 30 H96 M96 0 V30 M96 42 V46 M96 30 H140 M96 42 H140"
+              stroke="var(--color-gold-400)"
+              strokeWidth="1"
+              fill="none"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#stoneCourse)" />
+      </svg>
+
+      <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <p className="font-display text-2xl font-medium italic leading-[1.3] text-white sm:text-3xl">
           Compassionate care. Trusted support. A home that feels like
           family.
-        </motion.p>
+        </p>
 
-        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
-          {values.map((v, i) => {
+        <ul className="mt-14 flex flex-col divide-y divide-white/10 text-left sm:flex-row sm:divide-y-0 sm:divide-x">
+          {values.map((v) => {
             const Icon = icons[v.icon]
             return (
-              <motion.div
+              <li
                 key={v.title}
-                initial={reduce ? false : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
+                className="flex flex-1 items-start gap-4 py-6 first:pt-0 sm:px-8 sm:py-0 sm:first:pl-0 sm:last:pr-0"
               >
                 <Icon
-                  size={32}
+                  size={28}
                   weight="duotone"
-                  className="mx-auto text-gold-400"
+                  className="mt-1 shrink-0 text-gold-400"
                 />
-                <h3 className="mt-4 font-display text-lg font-semibold text-white">
-                  {v.title}
-                </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-white/70">
-                  {v.body}
-                </p>
-              </motion.div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-white">
+                    {v.title}
+                  </h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-white/70">
+                    {v.body}
+                  </p>
+                </div>
+              </li>
             )
           })}
-        </div>
+        </ul>
       </div>
     </section>
   )

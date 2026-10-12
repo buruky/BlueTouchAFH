@@ -68,7 +68,7 @@ export default function Nav() {
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-gold-500 px-5 py-2.5 text-[15px] font-semibold text-navy-950 shadow-sm transition hover:bg-gold-400 active:scale-[0.98]"
+            className="rounded-xl bg-gold-500 px-5 py-2.5 text-[15px] font-semibold text-navy-950 shadow-sm transition hover:bg-gold-400 active:scale-[0.98]"
           >
             Schedule a Tour
           </a>
@@ -116,7 +116,7 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-gold-500 px-5 py-3 text-center text-base font-semibold text-navy-950"
+              className="mt-2 rounded-xl bg-gold-500 px-5 py-3 text-center text-base font-semibold text-navy-950"
             >
               Schedule a Tour
             </a>

@@ -6,7 +6,9 @@ import Amenities from "./components/Amenities"
 import HomesIntro from "./components/HomesIntro"
 import LocationA from "./components/LocationA"
 import LocationB from "./components/LocationB"
+import Process from "./components/Process"
 import Values from "./components/Values"
+import FAQ from "./components/FAQ"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
@@ -21,7 +23,9 @@ function App() {
       <HomesIntro />
       <LocationA />
       <LocationB />
+      <Process />
       <Values />
+      <FAQ />
       <Contact />
       <Footer />
     </>

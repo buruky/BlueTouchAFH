@@ -11,7 +11,7 @@ const facts = [
   },
   {
     icon: ShieldCheck,
-    label: "Licensed Washington State Adult Family Home",
+    label: "Licensed by Washington State DSHS",
   },
   {
     icon: HandHeart,

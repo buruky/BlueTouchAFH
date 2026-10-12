@@ -123,3 +123,58 @@ export const values = [
     icon: "House",
   },
 ]
+
+export const tourSteps = [
+  {
+    title: "Call or request a tour",
+    body: `Reach out by phone or email and ${business.owner.split(" ")[0]} or a caregiver will set up a time that works for you.`,
+    icon: "Phone",
+  },
+  {
+    title: "Tour the home together",
+    body: "Walk through the home, meet the caregivers on shift, and see where your loved one would spend their days.",
+    icon: "DoorOpen",
+  },
+  {
+    title: "Talk through care & fit",
+    body: "We discuss your loved one's routine and needs, and what a good fit looks like for your family.",
+    icon: "ChatsCircle",
+  },
+  {
+    title: "Coordinate move-in",
+    body: "Once you're ready, we handle the details together so the transition feels calm, not rushed.",
+    icon: "House",
+  },
+]
+
+export const faqs = [
+  {
+    question: "What is an Adult Family Home?",
+    answer:
+      "A licensed, residential alternative to institutional care: a small number of residents live in an actual home, with caregivers present around the clock, rather than in a large facility.",
+  },
+  {
+    question: "Who manages Blue Touch day to day?",
+    answer: `Both homes are personally owned and managed by ${business.owner}, who oversees day-to-day care across both locations.`,
+  },
+  {
+    question: "Can I schedule a tour of either home?",
+    answer:
+      "Yes. Call the home directly or reach out through the contact section below, and we'll set up a time to show you around.",
+  },
+  {
+    question: "Is care really available 24/7?",
+    answer:
+      "Yes. A caregiver is present in each home around the clock, every day of the year.",
+  },
+  {
+    question: "What's included in care?",
+    answer:
+      "Personalized care plans, medication assistance, home-cooked meals, and social activities are included for every resident. See Care & Amenities above for the full list.",
+  },
+  {
+    question: "How do I reach you with questions?",
+    answer:
+      "Call, email, or fax any time. Contact details for both homes and the owner are in the section below.",
+  },
+]
