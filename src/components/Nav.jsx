@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { motion, useReducedMotion } from "motion/react"
 import { List, X, Phone } from "@phosphor-icons/react"
 import { business } from "../data/content"
 import Logo from "./Logo"
@@ -11,6 +12,7 @@ const links = [
 ]
 
 export default function Nav() {
+  const reduce = useReducedMotion()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -24,7 +26,10 @@ export default function Nav() {
   }, [])
 
   return (
-    <header
+    <motion.header
+      initial={reduce ? false : { opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
           ? "bg-cream-50/95 shadow-[0_1px_0_rgba(19,42,82,0.08)] backdrop-blur"
@@ -68,7 +73,7 @@ export default function Nav() {
           ))}
           <a
             href="#contact"
-            className="rounded-xl bg-gold-500 px-5 py-2.5 text-[15px] font-semibold text-navy-950 shadow-sm transition hover:bg-gold-400 active:scale-[0.98]"
+            className="rounded-xl bg-gold-500 px-5 py-2.5 text-[15px] font-semibold text-navy-950 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 hover:shadow-md active:translate-y-0 active:scale-[0.98]"
           >
             Schedule a Tour
           </a>
@@ -123,6 +128,6 @@ export default function Nav() {
           </nav>
         </div>
       )}
-    </header>
+    </motion.header>
   )
 }

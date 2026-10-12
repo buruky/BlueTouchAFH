@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
-import { Phone, ArrowRight } from "@phosphor-icons/react"
+import { Phone, ArrowRight, CaretDown } from "@phosphor-icons/react"
 import { business } from "../data/content"
 import { locationAImages } from "../lib/images"
 
@@ -28,38 +28,67 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-transparent" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-xl"
-        >
-          <h1 className="font-display text-4xl font-semibold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+        <div className="max-w-xl">
+          <motion.h1
+            initial={reduce ? false : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-4xl font-semibold leading-[1.1] text-white sm:text-5xl lg:text-6xl"
+          >
             A warm, loving home for the ones you love most.
-          </h1>
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/85">
+          </motion.h1>
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 max-w-lg text-lg leading-relaxed text-white/85"
+          >
             Two licensed Adult Family Homes in Everett&apos;s Silver Lake
             neighborhood, offering 24/7 personalized senior care.
-          </p>
+          </motion.p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+          >
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-7 py-3.5 text-base font-semibold text-navy-950 shadow-lg shadow-navy-950/20 transition hover:bg-gold-400 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-7 py-3.5 text-base font-semibold text-navy-950 shadow-lg shadow-navy-950/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400 hover:shadow-xl hover:shadow-gold-500/20 active:translate-y-0 active:scale-[0.98]"
             >
               Schedule a Tour
-              <ArrowRight size={18} weight="bold" />
+              <ArrowRight
+                size={18}
+                weight="bold"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </a>
             <a
               href={business.phoneHref}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/10 active:translate-y-0 active:scale-[0.98]"
             >
               <Phone size={18} weight="fill" />
               Call {business.phone}
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
+
+      {!reduce && (
+        <motion.a
+          href="#about"
+          aria-label="Scroll to learn more"
+          className="absolute inset-x-0 bottom-8 mx-auto flex w-fit flex-col items-center gap-1 text-white/70 transition hover:text-white"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <span className="text-xs font-medium uppercase tracking-widest">
+            Scroll
+          </span>
+          <CaretDown size={18} weight="bold" />
+        </motion.a>
+      )}
     </section>
   )
 }
