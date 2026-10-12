@@ -11,22 +11,22 @@
 @import "@fontsource/source-sans-3/700.css";
 
 @theme {
-  /* Brand navy + gold, carried over from Blue Touch's existing print identity */
-  --color-navy-950: #0c1a33;
-  --color-navy-900: #132a52;
-  --color-navy-800: #1b3764;
-  --color-navy-700: #274879;
-  --color-navy-100: #e7ecf4;
-  --color-navy-50: #f3f5f9;
+  /* Charcoal & Azure brand palette */
+  --color-navy-950: #0c0e10;
+  --color-navy-900: #191c1f;
+  --color-navy-800: #272b2f;
+  --color-navy-700: #383d43;
+  --color-navy-100: #e8e9ea;
+  --color-navy-50: #f4f4f5;
 
-  --color-gold-600: #a97c22;
-  --color-gold-500: #c6983a;
-  --color-gold-400: #d7b161;
-  --color-gold-100: #f3e7cb;
+  --color-gold-600: #2f6fa8;
+  --color-gold-500: #3f8bd1;
+  --color-gold-400: #6fa8de;
+  --color-gold-100: #d8e7f5;
 
-  --color-cream-50: #faf9f6;
-  --color-ink-900: #1b1e24;
-  --color-ink-600: #4b5160;
+  --color-cream-50: #f9f9f8;
+  --color-ink-900: #19191a;
+  --color-ink-600: #4c4c4e;
 
   --font-display: "Spectral", ui-serif, Georgia, serif;
   --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;

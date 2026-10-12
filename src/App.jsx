@@ -9,7 +9,6 @@ import LocationB from "./components/LocationB"
 import Values from "./components/Values"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
-import ThemeSwitcher from "./components/ThemeSwitcher"
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
       <Values />
       <Contact />
       <Footer />
-      <ThemeSwitcher />
     </>
   )
 }
