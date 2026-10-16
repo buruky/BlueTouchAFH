@@ -97,7 +97,7 @@ export default function LocationA() {
           >
             <div className="flex items-center gap-3">
               <h3 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
-                {location.shortName}
+                {location.address}, {location.cityStateZip}
               </h3>
               <span className="shrink-0 rounded-full bg-gold-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.04em] text-gold-600">
                 {location.neighborhood}

@@ -47,6 +47,15 @@ export default function Hero() {
             neighborhood, offering 24/7 personalized senior care.
           </motion.p>
 
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 text-sm italic tracking-wide text-gold-400"
+          >
+            &ldquo;Let all that you do be done in love.&rdquo; — 1 Corinthians 16:14
+          </motion.p>
+
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}

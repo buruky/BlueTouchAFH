@@ -47,7 +47,7 @@ export default function LocationB() {
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
             <div className="flex items-center gap-3">
               <h3 className="font-display text-2xl font-semibold text-white sm:text-3xl">
-                {location.shortName}
+                {location.address}, {location.cityStateZip}
               </h3>
               <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.04em] text-gold-400 backdrop-blur-sm">
                 {location.neighborhood}
