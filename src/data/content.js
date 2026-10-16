@@ -73,9 +73,10 @@ export const locations = [
 
 export const amenities = [
   {
-    title: "24/7 Care & Supervision",
-    body: "A caregiver is present around the clock, every day of the year.",
-    icon: "ShieldCheck",
+    title: "Home-Cooked Meals",
+    body: "Nutritious meals prepared fresh, every day, in the home's own kitchen.",
+    icon: "ForkKnife",
+    hasImage: true,
   },
   {
     title: "Personalized Care Plans",
@@ -88,10 +89,9 @@ export const amenities = [
     icon: "Pill",
   },
   {
-    title: "Home-Cooked Meals",
-    body: "Nutritious meals prepared fresh, every day, in the home's own kitchen.",
-    icon: "ForkKnife",
-    hasImage: true,
+    title: "24/7 Care & Supervision",
+    body: "A caregiver is present around the clock, every day of the year.",
+    icon: "ShieldCheck",
   },
   {
     title: "Social & Engaging Activities",

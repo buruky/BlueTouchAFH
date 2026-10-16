@@ -9,6 +9,9 @@ import {
 } from "@phosphor-icons/react"
 import { amenities } from "../data/content"
 import { locationAImages } from "../lib/images"
+import mealCasserole from "../assets/food/casserole.jpg"
+import mealSoup from "../assets/food/soup.jpg"
+import mealFamilyTable from "../assets/food/family-table.jpg"
 
 const icons = { ShieldCheck, Sparkle, Pill, ForkKnife, UsersThree, Bed }
 
@@ -22,9 +25,10 @@ const spans = [
 ]
 
 const photos = {
-  "Home-Cooked Meals": locationAImages.kitchen,
   "Comfortable Private Rooms": locationAImages.bedroom,
 }
+
+const mealPhotos = [mealCasserole, mealSoup, mealFamilyTable]
 
 export default function Amenities() {
   const reduce = useReducedMotion()
@@ -47,7 +51,8 @@ export default function Amenities() {
           {amenities.map((item, i) => {
             const Icon = icons[item.icon]
             const photo = photos[item.title]
-            const featured = i === 0
+            const isMeals = item.title === "Home-Cooked Meals"
+            const hasVisual = photo || isMeals
 
             return (
               <motion.div
@@ -61,28 +66,39 @@ export default function Amenities() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className={`${spans[i]} relative flex flex-col justify-end overflow-hidden rounded-2xl p-6 ${
-                  featured
-                    ? "bg-navy-900 text-white"
-                    : photo
-                      ? "text-white"
-                      : "border border-navy-900/8 bg-white text-navy-900"
+                  hasVisual
+                    ? "text-white"
+                    : "border border-navy-900/8 bg-white text-navy-900"
                 }`}
               >
-                {photo && (
-                  <>
+                {isMeals ? (
+                  <div className="absolute inset-0 grid grid-cols-3">
+                    {mealPhotos.map((src) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  photo && (
                     <img
                       src={photo}
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent" />
-                  </>
+                  )
+                )}
+                {hasVisual && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/25 to-transparent" />
                 )}
                 <Icon
                   size={28}
                   weight="duotone"
                   className={`relative mb-3 ${
-                    featured || photo ? "text-gold-400" : "text-gold-600"
+                    hasVisual ? "text-gold-400" : "text-gold-600"
                   }`}
                 />
                 <h3 className="relative font-display text-lg font-semibold leading-snug">
@@ -90,7 +106,7 @@ export default function Amenities() {
                 </h3>
                 <p
                   className={`relative mt-1.5 text-sm leading-relaxed ${
-                    featured || photo ? "text-white/80" : "text-ink-600"
+                    hasVisual ? "text-white/80" : "text-ink-600"
                   }`}
                 >
                   {item.body}
