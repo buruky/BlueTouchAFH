@@ -54,10 +54,10 @@ export default function Hero() {
             className="mt-6 max-w-md border-l-2 border-gold-400/60 pl-4"
           >
             <p className="font-display text-base italic leading-snug text-gold-100 sm:text-lg">
-              &ldquo;Do everything in love.&rdquo;
+              Everything we do, we do in love.
             </p>
             <cite className="mt-1.5 block text-xs font-semibold not-italic uppercase tracking-[0.18em] text-gold-400/90">
-              1 Corinthians 16:14
+              Inspired by 1 Corinthians 16:14
             </cite>
           </motion.blockquote>
 
