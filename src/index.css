@@ -77,3 +77,11 @@ a, button {
 * {
   scrollbar-color: var(--color-gold-500) var(--color-navy-50);
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

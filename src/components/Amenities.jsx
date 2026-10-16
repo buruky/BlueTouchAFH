@@ -72,13 +72,13 @@ export default function Amenities() {
                 }`}
               >
                 {isMeals ? (
-                  <div className="absolute inset-0 grid grid-cols-3">
+                  <div className="no-scrollbar absolute inset-0 flex snap-x snap-mandatory overflow-x-auto">
                     {mealPhotos.map((src) => (
                       <img
                         key={src}
                         src={src}
                         alt=""
-                        className="h-full w-full object-cover"
+                        className="h-full w-full flex-none snap-center object-cover"
                       />
                     ))}
                   </div>
