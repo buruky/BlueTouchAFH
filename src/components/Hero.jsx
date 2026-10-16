@@ -47,14 +47,19 @@ export default function Hero() {
             neighborhood, offering 24/7 personalized senior care.
           </motion.p>
 
-          <motion.p
+          <motion.blockquote
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 text-sm italic tracking-wide text-gold-400"
+            className="mt-6 max-w-md border-l-2 border-gold-400/60 pl-4"
           >
-            &ldquo;Let all that you do be done in love.&rdquo; — 1 Corinthians 16:14
-          </motion.p>
+            <p className="font-display text-base italic leading-snug text-gold-100 sm:text-lg">
+              &ldquo;Do everything in love.&rdquo;
+            </p>
+            <cite className="mt-1.5 block text-xs font-semibold not-italic uppercase tracking-[0.18em] text-gold-400/90">
+              1 Corinthians 16:14
+            </cite>
+          </motion.blockquote>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 18 }}
