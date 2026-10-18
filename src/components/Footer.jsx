@@ -43,6 +43,17 @@ export default function Footer() {
           <p>
             &copy; {year} {business.name}. Licensed Washington State Adult
             Family Home.
+            <span className="ml-1 text-white/50">
+              Site by{" "}
+              <a
+                href="https://burukyimesgen.com"
+                target="_blank"
+                rel="noopener nofollow"
+                className="hover:text-white"
+              >
+                BK Web Studios
+              </a>
+            </span>
           </p>
           <a href={business.emailHref} className="hover:text-white">
             {business.email}
